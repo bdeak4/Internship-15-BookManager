@@ -1,13 +1,52 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background-color: orangered;
+  color: #000;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 24px;
+  background-color: #000;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+nav {
+  margin-bottom: 12px;
+}
+
+.tab {
+  text-decoration: none;
+}
+
+.tab:hover,
+.tab--active {
+  text-decoration: underline;
+  text-decoration-color: orangered;
+}
+
+.tab:not(:last-child) {
+  margin-right: 8px;
 }
