@@ -3,7 +3,7 @@ import { useState } from "react";
 import { emptyBook } from "../constants/book";
 import { possibleCategories } from "../constants/categories";
 
-function BookForm({ addBook }) {
+const BookForm = ({ addBook }) => {
   const [book, setBook] = useState(emptyBook);
   const [error, setError] = useState("");
 
@@ -82,6 +82,6 @@ function BookForm({ addBook }) {
       <button type="submit">Dodaj knjigu</button>
     </form>
   );
-}
+};
 
 export default BookForm;

@@ -2,8 +2,9 @@ import { useState } from "react";
 import Active from "./Active";
 import Read from "./Read";
 
-function App() {
+const App = () => {
   const [screen, setScreen] = useState("active");
+  const [books, setBooks] = useState([]);
 
   return (
     <div>
@@ -29,10 +30,11 @@ function App() {
           Pročitano
         </a>
       </nav>
-      {screen === "active" ? <Active /> : ""}
-      {screen === "read" ? <Read /> : ""}
+
+      {screen === "active" ? <Active books={books} setBooks={setBooks} /> : ""}
+      {screen === "read" ? <Read books={books} setBooks={setBooks} /> : ""}
     </div>
   );
-}
+};
 
 export default App;
