@@ -9,7 +9,7 @@ function App() {
     <div>
       <nav>
         <a
-          href=""
+          href="/tab"
           onClick={(e) => {
             e.preventDefault();
             setScreen("active");
@@ -19,7 +19,7 @@ function App() {
           Aktivno
         </a>
         <a
-          href=""
+          href="/tab"
           onClick={(e) => {
             e.preventDefault();
             setScreen("read");

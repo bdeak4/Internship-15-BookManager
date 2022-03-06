@@ -50,3 +50,25 @@ nav {
 .tab:not(:last-child) {
   margin-right: 8px;
 }
+
+.form {
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.form .label,
+.form .error {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.form input,
+.form select {
+  margin-left: 12px;
+}
+
+.error {
+  color: red;
+}
