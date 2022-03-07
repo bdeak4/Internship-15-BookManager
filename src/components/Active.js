@@ -1,3 +1,4 @@
+import { sortActive } from "../utils/sort";
 import BookForm from "./BookForm";
 import BookList from "./BookList";
 
@@ -5,7 +6,7 @@ const Active = ({ books, setBooks }) => {
   const addBook = (book) => {
     setBooks((prev) => [
       ...prev,
-      { ...book, id: prev.length + 1, createdAt: new Date() },
+      { ...book, id: prev.length + 1, createdAt: new Date().toISOString() },
     ]);
   };
 
@@ -42,7 +43,7 @@ const Active = ({ books, setBooks }) => {
       )}
 
       <BookList
-        books={books.filter((book) => book.read === false)}
+        books={books.filter((book) => book.read === false).sort(sortActive)}
         deleteBook={handleDeleteBook}
         readBook={handleReadBook}
         addComment={handleAddComment}

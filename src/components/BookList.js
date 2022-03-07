@@ -19,6 +19,9 @@ const BookList = ({ books, deleteBook, readBook, addComment }) => {
           <h2 className="book__title">{book.title}</h2>
           <p className="book__category">Kategorija: {book.category}</p>
           <p className="book__priority">Prioritet: {book.priority}</p>
+          <p className="book__date">
+            Datum dodavanja: {new Date(book.createdAt).toLocaleString()}
+          </p>
 
           <div className="book__actions">
             {deleteBook && (

@@ -4,12 +4,9 @@ import Read from "./Read";
 
 const App = () => {
   const [screen, setScreen] = useState("active");
-  const [books, setBooks] = useState([]);
-
-  useEffect(() => {
-    const storedBooks = JSON.parse(localStorage.getItem("books") || "[]");
-    setBooks(storedBooks);
-  }, []);
+  const [books, setBooks] = useState(
+    JSON.parse(localStorage.getItem("books") || "[]")
+  );
 
   useEffect(() => {
     localStorage.setItem("books", JSON.stringify(books));
