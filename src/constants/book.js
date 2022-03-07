@@ -5,6 +5,7 @@ const emptyBook = () => ({
   priority: 1,
   read: false,
   createdAt: null,
+  readAt: null,
   comments: [],
 });
 

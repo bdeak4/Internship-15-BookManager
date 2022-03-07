@@ -39,6 +39,7 @@ const App = () => {
 
       {screen === "active" ? <Active books={books} setBooks={setBooks} /> : ""}
       {screen === "read" ? <Read books={books} setBooks={setBooks} /> : ""}
+      <pre>{JSON.stringify(books, null, 2)}</pre>
     </div>
   );
 };

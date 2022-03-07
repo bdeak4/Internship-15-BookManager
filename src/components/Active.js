@@ -19,6 +19,7 @@ const Active = ({ books, setBooks }) => {
       const book = prev.find((book) => book.id === id);
       if (book) {
         book.read = true;
+        book.readAt = new Date().toISOString();
       }
       return [...prev];
     });
@@ -48,7 +49,6 @@ const Active = ({ books, setBooks }) => {
         readBook={handleReadBook}
         addComment={handleAddComment}
       />
-      <pre>{JSON.stringify(books, null, 2)}</pre>
     </div>
   );
 };

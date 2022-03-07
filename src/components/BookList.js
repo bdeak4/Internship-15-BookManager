@@ -15,41 +15,46 @@ const BookList = ({ books, deleteBook, readBook, addComment }) => {
           }`}
           key={book.id}
         >
-          <p className="book__id">KNJIGA #{book.id}</p>
-          <h2 className="book__title">{book.title}</h2>
-          <p className="book__category">Kategorija: {book.category}</p>
-          <p className="book__priority">Prioritet: {book.priority}</p>
-          <p className="book__date">
-            Datum dodavanja: {new Date(book.createdAt).toLocaleString()}
-          </p>
+          <p>KNJIGA #{book.id}</p>
+          <h2>{book.title}</h2>
+          <p>Kategorija: {book.category}</p>
+          <p>Prioritet: {book.priority}</p>
+          <p>Datum dodavanja: {new Date(book.createdAt).toLocaleString()}</p>
+          {book.readAt && (
+            <p>Datum čitanja: {new Date(book.readAt).toLocaleString()}</p>
+          )}
 
-          <div className="book__actions">
-            {deleteBook && (
-              <button
-                onClick={() => deleteBook(book.id)}
-                className="button book__delete-button"
-              >
-                Obriši knjigu
-              </button>
-            )}
+          {(deleteBook || readBook) && (
+            <div className="book__actions">
+              {deleteBook && (
+                <button
+                  onClick={() => deleteBook(book.id)}
+                  className="button book__delete-button"
+                >
+                  Obriši knjigu
+                </button>
+              )}
 
-            {readBook && (
-              <button
-                onClick={() => readBook(book.id)}
-                className="button book__read-button"
-              >
-                Označi knjigu kao pročitanu
-              </button>
-            )}
-          </div>
+              {readBook && (
+                <button
+                  onClick={() => readBook(book.id)}
+                  className="button book__read-button"
+                >
+                  Označi knjigu kao pročitanu
+                </button>
+              )}
+            </div>
+          )}
 
           {book.comments.length > 0 && (
             <BookComments comments={book.comments} />
           )}
 
-          <BookCommentForm
-            addComment={(comment) => addComment(book.id, comment)}
-          />
+          {addComment && (
+            <BookCommentForm
+              addComment={(comment) => addComment(book.id, comment)}
+            />
+          )}
         </div>
       ))}
     </div>
