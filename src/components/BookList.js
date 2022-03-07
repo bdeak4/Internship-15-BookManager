@@ -4,6 +4,10 @@ import BookComments from "./BookComments";
 import { olderThanOneYear } from "../utils/date";
 
 const BookList = ({ books, deleteBook, readBook, addComment }) => {
+  if (!books.length) {
+    return <div>nema knjiga :/</div>;
+  }
+
   return (
     <div>
       {books.map((book) => (

@@ -38,8 +38,7 @@ const App = () => {
       </nav>
 
       {screen === "active" ? <Active books={books} setBooks={setBooks} /> : ""}
-      {screen === "read" ? <Read books={books} setBooks={setBooks} /> : ""}
-      <pre>{JSON.stringify(books, null, 2)}</pre>
+      {screen === "read" ? <Read books={books} /> : ""}
     </div>
   );
 };
