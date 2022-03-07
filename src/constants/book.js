@@ -4,6 +4,7 @@ const emptyBook = {
   category: "",
   priority: 1,
   read: false,
+  createdAt: null,
 };
 
 export { emptyBook };

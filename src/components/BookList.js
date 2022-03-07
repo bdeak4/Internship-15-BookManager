@@ -1,8 +1,17 @@
+import { olderThanOneYear } from "../utils/date";
+
 const BookList = ({ books, deleteBook, readBook }) => {
   return (
     <div>
       {books.map((book) => (
-        <div className="book" key={book.id}>
+        <div
+          className={`book ${
+            book.priority === 10 || olderThanOneYear(book.createdAt)
+              ? "important"
+              : ""
+          }`}
+          key={book.id}
+        >
           <p className="book__id">KNJIGA #{book.id}</p>
           <h2 className="book__title">{book.title}</h2>
           <p className="book__category">Kategorija: {book.category}</p>

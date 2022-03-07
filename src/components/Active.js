@@ -3,7 +3,10 @@ import BookList from "./BookList";
 
 const Active = ({ books, setBooks }) => {
   const addBook = (book) => {
-    setBooks((prev) => [...prev, { ...book, id: prev.length + 1 }]);
+    setBooks((prev) => [
+      ...prev,
+      { ...book, id: prev.length + 1, createdAt: new Date() },
+    ]);
   };
 
   const handleDeleteBook = (id) => {
