@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Active from "./Active";
 import Read from "./Read";
 
 const App = () => {
   const [screen, setScreen] = useState("active");
   const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const storedBooks = JSON.parse(localStorage.getItem("books") || "[]");
+    setBooks(storedBooks);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("books", JSON.stringify(books));
+  }, [books]);
 
   return (
     <div>

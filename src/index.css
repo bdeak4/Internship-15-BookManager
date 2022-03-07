@@ -122,3 +122,7 @@ nav {
 .message {
   color: orangered;
 }
+
+.book__comment-form {
+  display: flex;
+}
