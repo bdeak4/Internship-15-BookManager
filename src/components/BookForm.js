@@ -4,7 +4,7 @@ import { emptyBook } from "../constants/book";
 import { possibleCategories } from "../constants/categories";
 
 const BookForm = ({ addBook }) => {
-  const [book, setBook] = useState(emptyBook);
+  const [book, setBook] = useState(emptyBook());
   const [error, setError] = useState("");
 
   const setBookProperty = (key, value) => {
@@ -25,7 +25,7 @@ const BookForm = ({ addBook }) => {
     }
 
     addBook(book);
-    setBook(emptyBook);
+    setBook(emptyBook());
     setError("");
   };
 

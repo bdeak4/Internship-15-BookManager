@@ -1,4 +1,4 @@
-const emptyBook = {
+const emptyBook = () => ({
   id: 0,
   title: "",
   category: "",
@@ -6,6 +6,6 @@ const emptyBook = {
   read: false,
   createdAt: null,
   comments: [],
-};
+});
 
 export { emptyBook };
