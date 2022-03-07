@@ -79,7 +79,9 @@ const BookForm = ({ addBook }) => {
 
       {error && <div className="error">{error}</div>}
 
-      <button type="submit">Dodaj knjigu</button>
+      <button type="submit" className="button">
+        Dodaj knjigu
+      </button>
     </form>
   );
 };
