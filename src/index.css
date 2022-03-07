@@ -108,3 +108,13 @@ nav {
 .book__read-button {
   background-color: green;
 }
+
+.book__actions,
+.book__comments,
+.book__comment-form {
+  margin-top: 12px;
+}
+
+.book__comment-input {
+  margin-right: 12px;
+}

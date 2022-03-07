@@ -23,6 +23,16 @@ const Active = ({ books, setBooks }) => {
     });
   };
 
+  const handleAddComment = (bookId, comment) => {
+    setBooks((prev) => {
+      const book = prev.find((book) => book.id === bookId);
+      if (book) {
+        book.comments.push(comment);
+      }
+      return [...prev];
+    });
+  };
+
   return (
     <div>
       <BookForm addBook={addBook} />
@@ -30,6 +40,7 @@ const Active = ({ books, setBooks }) => {
         books={books.filter((book) => book.read === false)}
         deleteBook={handleDeleteBook}
         readBook={handleReadBook}
+        addComment={handleAddComment}
       />
       <pre>{JSON.stringify(books, null, 2)}</pre>
     </div>

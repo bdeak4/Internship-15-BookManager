@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { olderThanOneYear } from "../utils/date";
+import BookCommentForm from "./BookCommentForm";
+import BookComments from "./BookComments";
 
-const BookList = ({ books, deleteBook, readBook }) => {
+const BookList = ({ books, deleteBook, readBook, addComment }) => {
   return (
     <div>
       {books.map((book) => (
@@ -17,23 +20,33 @@ const BookList = ({ books, deleteBook, readBook }) => {
           <p className="book__category">Kategorija: {book.category}</p>
           <p className="book__priority">Prioritet: {book.priority}</p>
 
-          {deleteBook && (
-            <button
-              onClick={() => deleteBook(book.id)}
-              className="button book__delete-button"
-            >
-              Obriši knjigu
-            </button>
+          <div className="book__actions">
+            {deleteBook && (
+              <button
+                onClick={() => deleteBook(book.id)}
+                className="button book__delete-button"
+              >
+                Obriši knjigu
+              </button>
+            )}
+
+            {readBook && (
+              <button
+                onClick={() => readBook(book.id)}
+                className="button book__read-button"
+              >
+                Označi knjigu kao pročitanu
+              </button>
+            )}
+          </div>
+
+          {book.comments.length > 0 && (
+            <BookComments comments={book.comments} />
           )}
 
-          {readBook && (
-            <button
-              onClick={() => readBook(book.id)}
-              className="button book__read-button"
-            >
-              Označi knjigu kao pročitanu
-            </button>
-          )}
+          <BookCommentForm
+            addComment={(comment) => addComment(book.id, comment)}
+          />
         </div>
       ))}
     </div>
