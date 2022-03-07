@@ -118,3 +118,7 @@ nav {
 .book__comment-input {
   margin-right: 12px;
 }
+
+.message {
+  color: orangered;
+}

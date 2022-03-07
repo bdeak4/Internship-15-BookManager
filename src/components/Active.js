@@ -35,7 +35,12 @@ const Active = ({ books, setBooks }) => {
 
   return (
     <div>
-      <BookForm addBook={addBook} />
+      {books.filter((book) => book.read === false).length >= 10 ? (
+        <p className="message">Onemogućen unos, ajde čitat!</p>
+      ) : (
+        <BookForm addBook={addBook} />
+      )}
+
       <BookList
         books={books.filter((book) => book.read === false)}
         deleteBook={handleDeleteBook}
