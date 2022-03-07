@@ -21,11 +21,19 @@ const BookList = ({ books, deleteBook, readBook, addComment }) => {
         >
           <p>KNJIGA #{book.id}</p>
           <h2>{book.title}</h2>
-          <p>Kategorija: {book.category}</p>
-          <p>Prioritet: {book.priority}</p>
-          <p>Datum dodavanja: {new Date(book.createdAt).toLocaleString()}</p>
+          <p>
+            <b>Kategorija:</b> {book.category}
+          </p>
+          <p>
+            <b>Prioritet:</b> {book.priority}
+          </p>
+          <p>
+            <b>Datum dodavanja:</b> {new Date(book.createdAt).toLocaleString()}
+          </p>
           {book.readAt && (
-            <p>Datum čitanja: {new Date(book.readAt).toLocaleString()}</p>
+            <p>
+              <b>Datum čitanja:</b> {new Date(book.readAt).toLocaleString()}
+            </p>
           )}
 
           {(deleteBook || readBook) && (

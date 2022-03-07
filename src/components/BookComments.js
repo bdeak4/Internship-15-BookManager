@@ -3,7 +3,7 @@ import { uuidv4 } from "../utils/crypto";
 const BookComments = ({ comments }) => {
   return (
     <div className="book__comments">
-      <p>Komentari:</p>
+      <b>Komentari:</b>
       <ul>
         {comments.map((comment) => (
           <li key={uuidv4()}>{comment}</li>
